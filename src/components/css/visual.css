@@ -1,0 +1,19 @@
+.sub-container {
+    display: grid;
+    grid-template-rows: auto 40px;
+    grid-template-areas:
+       "map"
+       "footer";
+}
+
+.sub-item {
+    margin: 3px;
+}
+
+.sub-item__map {
+    grid-area: map;
+}
+
+.sub-item__footer {
+    grid-area: footer;
+}

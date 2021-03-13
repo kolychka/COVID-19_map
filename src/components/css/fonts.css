@@ -1,0 +1,32 @@
+.font_default {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #bdbdbd;
+}
+
+.h1 {
+    font-size: 1.503565rem;
+    font-weight: 400;
+    line-height: 1.3875;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+.h1_padding {
+    padding: 0 5px;
+}
+
+.h2 {
+    font-size: ;
+    line-height: ;
+    color: ;
+}
+
+.h3 {
+    font-size: ;
+    line-height: ;
+    color: ;
+}

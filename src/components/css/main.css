@@ -1,0 +1,32 @@
+.container {
+    background-color: rgb(10, 10, 10);
+
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-rows: 60px auto;
+    grid-template-areas:
+       "header header header"
+       "cases visual statistics";
+}
+
+.item__header {
+    grid-area: header;
+}
+
+.item__cases {
+    grid-area: cases;
+}
+
+.item__visual {
+    grid-area: visual;
+}
+
+.item__statistics {
+    grid-area: statistics;
+}
+
+.element {
+    background: #222;
+    border: 1px solid #363636;
+    margin: 10px;
+}

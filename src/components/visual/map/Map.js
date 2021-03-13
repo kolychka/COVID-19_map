@@ -1,10 +1,13 @@
 import React from 'react';
+import '../../css/map.css';
 
 class Map extends React.Component { 
     render() {
         return (
-            <div className="bg-blue">
-                Map
+            <div className="sub-item sub-item__map element">
+                <div>
+                    Map
+                </div>
             </div>
         );
     }
