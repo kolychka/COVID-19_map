@@ -8,7 +8,7 @@ class Visual extends React.Component {
 
     render() {
         return (
-            <div className="bg-green item item__visual">
+            <div className="item item__visual">
                 <div className="sub-container">
                     <Map></Map>
                     <Footer></Footer>

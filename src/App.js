@@ -1,6 +1,7 @@
 import React from 'react';
-import './components/css/main-bg.css'; // цвета для прорисовки блоков, нужно будет удалить
 import './components/css/main.css';
+import './components/css/default-block.css';
+import './components/css/number.css';
 import './components/css/fonts.css';
 
 import Header from './components/header/Header';
@@ -17,7 +18,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="bg-main container font_default">
+      <div className="container container_padding font_default">
         <Header></Header>
         <Cases></Cases>
         <Visual></Visual>

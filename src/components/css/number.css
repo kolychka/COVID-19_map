@@ -1,0 +1,22 @@
+.number {
+    font-family: 'Open Sans', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.total-number {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+}
+.total-number_padding {
+    padding: 0 5px;
+}
+
+.time {
+    display: block;
+    line-height: 1;
+    text-align: center;
+}

@@ -1,0 +1,10 @@
+.default-block {
+    background: #222;
+    border: 1px solid #363636;
+}
+.default-block_margin_b {
+    margin-bottom: 10px;
+}
+.default-block_padding {
+    padding: 5px;
+}

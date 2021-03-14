@@ -6,8 +6,8 @@
        "footer";
 }
 
-.sub-item {
-    margin: 3px;
+.sub-item_margin_b {
+    margin-bottom: 10px;
 }
 
 .sub-item__map {

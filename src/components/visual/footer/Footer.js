@@ -4,7 +4,7 @@ import '../../css/footer.css';
 class Footer extends React.Component { 
     render() {
         return (
-            <div className="sub-item sub-item__footer element">
+            <div className="sub-item sub-item__footer default-block">
                 <div>
                     Footer
                 </div>
