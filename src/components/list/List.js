@@ -15,7 +15,7 @@ class List extends React.Component {
             name: "cases",
             color: "text_red",
             title: "Global Cases",
-            totalNumber: "119&nbsp;514&nbsp;479", // общее количество
+            totalNumber: "119 514 479", // общее количество
             subTitle: "Cases by Country/Region/Sovereignty",
             data: [
                 {

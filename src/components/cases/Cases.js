@@ -11,7 +11,7 @@ class Cases extends React.Component {
                 <List></List>
                 <div className="default-block default-block_padding">
                     <label className="label">Last Updated at (M/D/YYYY)</label>
-                    <time className="time number" datetime={time}>3/14/2021, 19:26</time>
+                    <time className="time number" dateTime={time}>3/14/2021, 19:26</time>
                 </div>
             </div>
         );

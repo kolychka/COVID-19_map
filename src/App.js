@@ -11,21 +11,21 @@ import Statistics from './components/statistics/Statistics';
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
 
-  render() {
-    return (
-      <div className="container container_padding font_default">
-        <Header></Header>
-        <Cases></Cases>
-        <Visual></Visual>
-        <Statistics></Statistics>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="container container_padding font_default">
+                <Header></Header>
+                <Cases></Cases>
+                <Visual></Visual>
+                <Statistics></Statistics>
+            </div>
+        );
+    }
 }
 
 export default App;
