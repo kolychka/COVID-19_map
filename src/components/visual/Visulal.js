@@ -9,7 +9,7 @@ class Visual extends React.Component {
     render() {
         return (
             <div className="item item__visual">
-                <div className="sub-container">
+                <div className="visual-container">
                     <Map></Map>
                     <Footer></Footer>
                 </div>

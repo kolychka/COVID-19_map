@@ -1,0 +1,31 @@
+.statistics-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1fr, 2);
+    grid-template-rows: 4fr 3fr;
+    grid-template-areas:
+       "deaths tests"
+       "graph graph";
+}
+
+.statistics-item_margin_b {
+    margin-bottom: 10px;
+}
+
+.statistics-item__deaths {
+    grid-area: deaths;
+}
+
+.statistics-item__tests {
+    grid-area: tests;
+}
+
+.statistics-item__graph {
+    grid-area: graph;
+}
+
+/* цвета для помощи в наложении гридов на элементы */
+.bg-el-1 { background: rgb(255, 180, 180); }
+.bg-el-2 { background: rgb(243, 222, 178); }
+.bg-el-3 { background: rgb(214, 252, 189); }
+.bg-el-4 { background: rgb(221, 240, 234); }

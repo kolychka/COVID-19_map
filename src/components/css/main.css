@@ -32,3 +32,7 @@
 .item__statistics {
     grid-area: statistics;
 }
+
+.display_none {
+    display: none;
+}

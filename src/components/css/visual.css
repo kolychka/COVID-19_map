@@ -1,4 +1,4 @@
-.sub-container {
+.visual-container {
     display: grid;
     grid-template-rows: auto 40px;
     grid-template-areas:
@@ -6,14 +6,14 @@
        "footer";
 }
 
-.sub-item_margin_b {
+.visual-item_margin_b {
     margin-bottom: 10px;
 }
 
-.sub-item__map {
+.visual-item__map {
     grid-area: map;
 }
 
-.sub-item__footer {
+.visual-item__footer {
     grid-area: footer;
 }

@@ -8,3 +8,9 @@
 .default-block_padding {
     padding: 5px;
 }
+
+.default-block_border-top_none {
+    border-top: 1px solid #222;
+    box-sizing: border-box;
+    margin-top: -1px;
+}
