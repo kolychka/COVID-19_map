@@ -2,7 +2,7 @@
     background-color: rgb(1, 1, 1);
 
     display: grid;
-    grid-template-columns: 3fr 9fr 5fr;
+    grid-template-columns: minmax(90px, 3fr) minmax(300px, 9fr) minmax(120px, 5fr); 
     grid-template-rows: 60px auto;
     grid-template-areas:
        "header header header"

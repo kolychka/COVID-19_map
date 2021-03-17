@@ -1,8 +1,8 @@
 import React from 'react';
-import './components/css/main.css';
-import './components/css/default-block.css';
-import './components/css/number.css';
-import './components/css/fonts.css';
+import './css/main.css';
+import './css/default-block.css';
+import './css/number.css';
+import './css/fonts.css';
 
 import Header from './components/header/Header';
 import Cases from './components/cases/Cases';

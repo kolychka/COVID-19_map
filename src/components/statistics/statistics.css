@@ -1,15 +1,14 @@
 .statistics-container {
-    height: 100%;
     display: grid;
-    grid-template-columns: repeat(1fr, 2);
+    grid-template-columns: minmax(60px, 1fr) minmax(60px, 1fr); 
     grid-template-rows: 4fr 3fr;
     grid-template-areas:
        "deaths tests"
        "graph graph";
 }
 
-.statistics-item_margin_b {
-    margin-bottom: 10px;
+.statistics-item_margin_r {
+    margin-right: 10px;
 }
 
 .statistics-item__deaths {

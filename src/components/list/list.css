@@ -1,0 +1,27 @@
+.list__item {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #5c5c5c; 
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: start;
+}
+.list__item_margin {
+    margin: 0 -5px;
+}
+.list__item_padding {
+    padding: 6px 5px 3px 5px;
+}
+
+.list__content_margin {
+    margin-right: 5px;
+}
+
+.list__type {
+    font-size: 14px;
+}
+
+.list__region {
+    font-weight: 600;
+}

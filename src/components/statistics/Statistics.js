@@ -1,19 +1,20 @@
 import React from 'react';
-import '../css/statistics.css';
+import List from '../list/List';
+import './statistics.css';
 
 class Statistics extends React.Component { 
     render() {
         return (
             /* убрать цвет с элементов после отладки */
             <div className="item item__statistics">
-                <div className="statistics-container bg-el-1">
-                    <div className="statistics-item statistics-item__deaths default-block bg-el-2">
-                        Statistics
+                <div className="statistics-container">
+                    <div className="statistics-item statistics-item_margin_r statistics-item__deaths">
+                        <List name="statistics" color="text_white"></List>
                     </div>
-                    <div className="statistics-item statistics-item__tests default-block bg-el-3">
-                        Statistics
+                    <div className="statistics-item statistics-item__tests">
+                        <List name="statistics" color="text_blue"></List>
                     </div>
-                    <div className="statistics-item statistics-item__graph default-block bg-el-4">
+                    <div className="statistics-item statistics-item__graph default-block">
                         Statistics
                     </div>
                 </div>

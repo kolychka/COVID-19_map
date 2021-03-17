@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/visual.css'
+import './visual.css'
 
 import Map from './map/Map';
 import Footer from './footer/Footer';
