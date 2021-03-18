@@ -66,12 +66,14 @@ class List extends React.Component {
                             { this.addCountryList() }
                             { this.addTypeCountryList() }
                             { this.addTypeRegionList() }
-                            
                         </div>
                     </section>
-                    <div className="default-block default-block_border-top_none">
-                        tabs{/* место для вкладок */}
-                    </div>
+                    <nav>
+                        <ul className="list__tabs list__tabs_margin list__tabs_padding_l">
+                            <li className="default-block default-block_border-top_none list__tabs-elem list__tabs-elem_padding list__tabs-elem_margin_r"><a href="#a" className="a">Global Tests</a></li>
+                            <li className="default-block default-block_border-top_none list__tabs-elem list__tabs-elem_padding"><a href="#a" className="a">Region</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         );

@@ -1,6 +1,6 @@
 .default-block {
-    background: #222;
-    border: 1px solid #363636;
+    background: rgba(34, 34, 34, 1);
+    border: 1px solid rgba(54, 54, 54, 1);
 }
 .default-block_margin_b {
     margin-bottom: 10px;
@@ -10,7 +10,7 @@
 }
 
 .default-block_border-top_none {
-    border-top: 1px solid #222;
+    border-top: 1px solid rgba(34, 34, 34, 1);
     box-sizing: border-box;
     margin-top: -1px;
 }

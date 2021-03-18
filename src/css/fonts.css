@@ -3,7 +3,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
-    color: #bdbdbd;
+    color: rgba(189, 189, 189, 1);
 }
 
 .h1 {
@@ -23,7 +23,7 @@
     font-size: 12px; 
     font-weight: 400;
     line-height: normal;
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 1);
     text-align: center;
     margin: 0 0 5px 0;
 }
@@ -47,24 +47,29 @@
     margin: 0 0 2px 0;
 }
 
+.a {
+    text-decoration: none;
+    color: rgba(189, 189, 189, 1);
+}
+
 .text_red {
-    color: rgb(230, 0, 0);
+    color: rgba(230, 0, 0, 1);
 }
 .text_white {
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 1);
 }
 .text_blue {
-    color: rgb(115, 178, 255); 
+    color: rgba(115, 178, 255, 1); 
 }
 .text_grey {
-    color: #d6d6d6;
+    color: rgba(214, 214, 214, 1);
 }
 .text-green {
-    color: rgb(112, 168, 0);
+    color: rgba(112, 168, 0, 1);
 }
 .text-orange {
-    color: rgb(255, 170, 0);
+    color: rgba(255, 170, 0, 1);
 }
 .text_yellow {
-    color: rgb(255, 255, 0);
+    color: rgba(255, 255, 0, 1);
 }

@@ -1,7 +1,7 @@
 .list__item {
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 1px solid #5c5c5c; 
+    border-bottom: 1px solid rgba(92, 92, 92, 1); 
     font-size: 16px;
     font-weight: 400;
     line-height: 1;
@@ -24,4 +24,40 @@
 
 .list__region {
     font-weight: 600;
+}
+
+.list__tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+.list__tabs_margin {
+    margin: 0;
+}
+.list__tabs_padding_l {
+    padding-left: 0;
+}
+.list__tabs-elem {
+    font-size: 12px;
+    line-height: 2;
+    min-width: 40%;
+    max-width: 45%;
+    height: 25px;
+    
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.list__tabs-elem:hover {
+    cursor: pointer;
+    background: rgba(70, 70, 70, 1);
+    border: 1px solid rgba(54, 54, 54, 0.7);
+}
+.list__tabs-elem_margin_r {
+    margin-right: 5px;
+}
+.list__tabs-elem_padding { 
+    padding: 0 5px;
 }

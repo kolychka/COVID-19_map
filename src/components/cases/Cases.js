@@ -1,5 +1,4 @@
 import React from 'react';
-// import '../../css/select-block.css';
 import './cases.css';
 import List from '../list/List.js'
 
