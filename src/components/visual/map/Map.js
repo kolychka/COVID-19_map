@@ -212,13 +212,14 @@ class Map extends React.Component {
             [[0.03233, 51.58006], [0.03397, 51.57653], [0.03744, 51.57436], [0.03319, 51.572], [0.02361, 51.57164], [0.01925, 51.56889], [0.01503, 51.56625], [0.01517, 51.56395], [0.02472, 51.55994], [0.02769, 51.55642], [0.04414, 51.55858], [0.05075, 51.55947], [0.05608, 51.56175], [0.05611, 51.56178], [0.0525, 51.56611], [0.04861, 51.5708], [0.04597, 51.57397], [0.04425, 51.57606], [0.04158, 51.57925], [0.04133, 51.58161], [0.04117, 51.58336], [0.04081, 51.58681], [0.04397, 51.58922], [0.03975, 51.59297], [0.03939, 51.5933], [0.03889, 51.59375], [0.03908, 51.59397], [0.04028, 51.59525], [0.04094, 51.59594], [0.04275, 51.59669], [0.05394, 51.60142], [0.06011, 51.60053], [0.0645, 51.60425], [0.06978, 51.60311], [0.07006, 51.60089], [0.07367, 51.60003], [0.07742, 51.60567], [0.06975, 51.60825], [0.06964, 51.60653], [0.06575, 51.60725], [0.06692, 51.60897], [0.06119, 51.60825], [0.0515, 51.60266], [0.04817, 51.60305], [0.04603, 51.60331], [0.04258, 51.60183], [0.03917, 51.59833], [0.03608, 51.59517], [0.03119, 51.59014], [0.03031, 51.58445], [0.03233, 51.58006]]];
         // london.forEach(coords => coords.forEach(coord => coord.reverse()));
 
-        
-        const cityCoordinates = [
-            [[0, 1], [0, 1], [0, 1], [0, 1]],
+        // длина подмассивов разная (0 192) (1 16) (2 8) (3 51)
+        london.forEach((coords, i) => console.log(i, coords.length)); 
+
+        // советую поиграть с длинной и высотой массива
+        const cityCoordinates = [ 
+            [[0, 1], [0, 1], [0, 1]],
             [[1, 2], [1, 2], [1, 2], [1, 2]],
-            [[2, 0], [2, 3], [2, 6], [2, 9]],
-            [[3, 0], [3, 0]],
-            [[4, 0], [4, 0]]
+            [[2, 3], [2, 6], [2, 9]]
         ];
 
         // 1 вариант решения: на for 
@@ -226,7 +227,6 @@ class Map extends React.Component {
         for (let i = 0; i < cityCoordinates.length; i++) {
             let sum = [0, 0]; // хранилище среднего значения подмассива
             let coords = cityCoordinates[i];
-            console.log(coords);
             for (let j = 0; j < coords.length; j++) {
                 // накапливаем значение
                 sum[0] += coords[j][0];
@@ -239,7 +239,6 @@ class Map extends React.Component {
             // накапливаем значение
             allSum[0] += sum[0];
             allSum[1] += sum[1];
-            console.log(sum);
         }
         // считаем среднее массива
         allSum[0] = allSum[0]/cityCoordinates.length;
@@ -274,9 +273,8 @@ class Map extends React.Component {
             const reducer = (accumulator, currentValue) => accumulator + currentValue;
             let lengthCoords = 0;
             cityCenter1[index] = cityCoordinates.map(coords => { 
-                let sumCoords = coords.map(coord => { return coord[index]; } ).reduce(reducer);
                 lengthCoords += coords.length;
-                return sumCoords;
+                return coords.map(coord => { return coord[index]; } ).reduce(reducer);
             }).reduce(reducer) / lengthCoords;
         }
         myBestMethod(0);
@@ -293,7 +291,6 @@ class Map extends React.Component {
                     />
                     <Circle center={center} pathOptions={fillBlueOptions} radius={circleRadius} stroke={false} />
                     <Polygon positions={london} color="blue" />
-
                 </MapContainer>
             </div>
         );
