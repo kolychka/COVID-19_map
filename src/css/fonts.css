@@ -64,10 +64,10 @@
 .text_grey {
     color: rgba(214, 214, 214, 1);
 }
-.text-green {
+.text_green {
     color: rgba(112, 168, 0, 1);
 }
-.text-orange {
+.text_orange {
     color: rgba(255, 170, 0, 1);
 }
 .text_yellow {

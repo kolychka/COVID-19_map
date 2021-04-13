@@ -11,11 +11,6 @@ import Statistics from './components/statistics/Statistics';
 
 class App extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
     render() {
         return (
             <div className="container container_padding font_default">
