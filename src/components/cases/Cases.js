@@ -2,8 +2,19 @@ import React from 'react';
 import './cases.css';
 import List from '../list/List.js'
 
-class Cases extends React.Component { 
+class Cases extends React.Component {
+
+    constructor(props) {
+        super(props);
+        
+        this.api = props.api;
+        this.state = props.downloadStatus;
+    }
+
     render() {
+
+        console.log('А йА туд в рендере!!!', this.api.getDownloadCountries());
+
         let time = "2021-03-14 19:26";
         return (
             <div className="item item__cases">
