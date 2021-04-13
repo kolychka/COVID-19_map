@@ -1,0 +1,69 @@
+.list__item {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(92, 92, 92, 1); 
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: start;
+}
+.list__item_margin {
+    margin: 0 -5px;
+}
+.list__item_padding {
+    padding: 6px 5px 3px 5px;
+}
+
+.list__content_margin {
+    margin-right: 5px;
+}
+
+.list__type {
+    font-size: 14px;
+}
+
+.list__region {
+    font-weight: 600;
+}
+
+.list__tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+.list__tabs_margin {
+    margin: 0;
+}
+.list__tabs_padding_l {
+    padding-left: 0;
+}
+.list__tabs-elem {
+    font-size: 12px;
+    line-height: 2;
+    min-width: 40%;
+    max-width: 45%;
+    height: 25px;
+    
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.list__tabs-elem:hover {
+    border-top: 1px solid transparent;
+    border-right: 1px solid rgba(64, 64, 64, 1);
+    border-left:  1px solid rgba(64, 64, 64, 1);
+    border-bottom: 2px solid rgba(92, 92, 92, 1);
+}
+.list__tabs-elem:active {
+    background: rgba(44, 44, 44, 0.33);
+    border-bottom: 1px solid rgba(64, 64, 64, 1);
+}
+.list__tabs-elem_margin_r {
+    margin-right: 5px;
+}
+.list__tabs-elem_padding { 
+    padding: 0 5px;
+}

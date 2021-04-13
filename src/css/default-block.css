@@ -1,0 +1,16 @@
+.default-block {
+    background: rgba(44, 44, 44, 1);
+    border: 1px solid rgba(64, 64, 64, 1);
+}
+.default-block_margin_b {
+    margin-bottom: 10px;
+}
+.default-block_padding {
+    padding: 5px;
+}
+
+.default-block_border-top_none {
+    border-top: 1px solid rgba(44, 44, 44, 1);
+    box-sizing: border-box;
+    margin-top: -1px;
+}

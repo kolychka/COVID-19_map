@@ -1,0 +1,39 @@
+.container {
+    height: 100%;
+    background-color: rgba(10, 10, 10, 1);
+
+    display: grid;
+    grid-template-columns: minmax(90px, 3fr) minmax(300px, 9fr) minmax(120px, 5fr); 
+    grid-template-rows: 60px auto;
+    grid-template-areas:
+       "header header header"
+       "cases visual statistics";
+}
+.container_padding {
+    padding: 5px 5px 10px 5px;
+}
+
+.item {
+    box-sizing: border-box;
+    margin: 0 5px;
+}
+
+.item__header {
+    grid-area: header;
+}
+
+.item__cases {
+    grid-area: cases;
+}
+
+.item__visual {
+    grid-area: visual;
+}
+
+.item__statistics {
+    grid-area: statistics;
+}
+
+.display_none {
+    display: none;
+}

@@ -1,0 +1,27 @@
+.statistics-container {
+    display: grid;
+    grid-template-columns: minmax(60px, 1fr) minmax(60px, 1fr); 
+    grid-template-rows: 4fr 3fr;
+    grid-template-areas:
+       "deaths tests"
+       "graph graph";
+}
+
+.statistics-item_margin_r {
+    margin-right: 5px;
+}
+.statistics-item_margin_l {
+    margin-left: 5px;
+}
+
+.statistics-item__deaths {
+    grid-area: deaths;
+}
+
+.statistics-item__tests {
+    grid-area: tests;
+}
+
+.statistics-item__graph {
+    grid-area: graph;
+}

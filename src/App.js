@@ -1,5 +1,8 @@
 import React from 'react';
-import './components/css/main-bg.css'; // цвета для прорисовки блоков, нужно будет удалить
+import './css/main.css';
+import './css/default-block.css';
+import './css/number.css';
+import './css/fonts.css';
 
 import Header from './components/header/Header';
 import Cases from './components/cases/Cases';
@@ -8,22 +11,16 @@ import Statistics from './components/statistics/Statistics';
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { };
-  }
-
-  render() {
-    return (
-      <div className="bg-main">
-        <p>App</p>
-        <Header></Header>
-        <Cases></Cases>
-        <Visual></Visual>
-        <Statistics></Statistics>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="container container_padding font_default">
+                <Header></Header>
+                <Cases></Cases>
+                <Visual></Visual>
+                <Statistics></Statistics>
+            </div>
+        );
+    }
 }
 
 export default App;

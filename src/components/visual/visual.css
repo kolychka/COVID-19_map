@@ -1,0 +1,19 @@
+.visual-container {
+    display: grid;
+    grid-template-rows: auto 40px;
+    grid-template-areas:
+       "map"
+       "footer";
+}
+
+.visual-item_margin_b {
+    margin-bottom: 10px;
+}
+
+.visual-item__map {
+    grid-area: map;
+}
+
+.visual-item__footer {
+    grid-area: footer;
+}
