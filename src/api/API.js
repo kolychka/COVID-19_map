@@ -1,15 +1,17 @@
 class API {
     constructor(cbs) {
-        this.countries = null;
+        // this.countries = null;
+        this.summary = {};
         (async () => {
-            this.countries = await this.getCountries();
+            // this.countries = await this.getCountries();
+            this.summary = await this.getSummary();
             cbs.cb();
         })();
     }
 
     async getData(url = '') {
-        const result = await fetch(`https://api.covid19api.com/${url}`);
-        return (await result.json());
+        const response = await fetch(`https://api.covid19api.com/${url}`);
+        return (await response.json());
     }
 
     /*async summary() {
@@ -31,6 +33,10 @@ class API {
 
     getDownloadCountries() {
         return this.countries;
+    }
+
+    getSummary() {
+        return this.getData('summary?token=pk.eyJ1IjoiYXJhbWJvbCIsImEiOiJja2lzeTZseW8wODFpMnFtdXlqYjFyd2JnIn0.WMxH4WZLhJ-50-zSMgJL_Q');
     }
 
     getCountries() {

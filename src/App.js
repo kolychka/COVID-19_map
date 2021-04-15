@@ -22,6 +22,7 @@ class App extends React.Component {
         super(props);
         cbs.cb = () => {
             this.cases.setState({ downloadStatus: true });
+            this.statistics.setState({ downloadStatus: true });
         };
     }
 
@@ -35,7 +36,11 @@ class App extends React.Component {
                     downloadStatus={false}
                 ></Cases>
                 <Visual api={api}></Visual>
-                <Statistics></Statistics>
+                <Statistics
+                    ref={statistics => this.statistics = statistics}
+                    api={api}
+                    downloadStatus={false}
+                ></Statistics>
             </div>
         );
     }

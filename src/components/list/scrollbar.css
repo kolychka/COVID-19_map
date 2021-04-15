@@ -1,0 +1,15 @@
+.thumb-y {
+    background: rgba(189, 189, 189, 0.5) !important;
+}
+
+.track-y {
+    width: 5px !important;
+}
+
+.track-x {
+    display: none !important;
+}
+
+.wraper {
+    inset: 0 !important;
+}
