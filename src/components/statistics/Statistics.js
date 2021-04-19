@@ -33,6 +33,22 @@ class Statistics extends React.Component {
         return deathsSummary;
     }
 
+    getTestsSummary() {
+        let testsSummary = {
+            "total": this.api.summary.Global.TotalRecovered,
+            "countries": [],
+        }
+        this.api.summary.Countries.forEach(country => {
+            testsSummary.countries.push({ 
+                "id": country.ID, 
+                "country": country.Country,
+                "total": country.TotalRecovered,
+            });
+        });
+        testsSummary.countries.sort(this.compareTotals);
+        return testsSummary;
+    }
+
     render() {
         return (
             <div className="item item__statistics">
@@ -41,6 +57,7 @@ class Statistics extends React.Component {
                         this.state.downloadStatus ? 
                             <List 
                                 name="statistics" 
+                                title="deaths"
                                 color="text_white" 
                                 summary={this.getDeathsSummary()}
                             ></List> : ""
@@ -49,8 +66,9 @@ class Statistics extends React.Component {
                         this.state.downloadStatus ? 
                             <List 
                                 name="statistics" 
+                                title="tests"
                                 color="text_blue" 
-                                summary={this.getDeathsSummary()}
+                                summary={this.getTestsSummary()}
                             ></List> : ""
                     }</div>
                     <div className="statistics-item statistics-item__graph default-block">

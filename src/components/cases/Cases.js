@@ -34,13 +34,13 @@ class Cases extends React.Component {
     }
 
     render() {
-        // console.log("123", this.api.summary);
         let time = this.api?.summary?.Global?.Date ? this.api.summary.Global.Date : '2021-04-15'; //this.api.summary.Global.Date;
         return (
             <div className="item item__cases">{
                 this.state.downloadStatus ? 
                     <List 
                         name="cases" 
+                        title="cases"
                         color="text_red" 
                         summary={this.getCasesSummary()}
                     ></List> : ""

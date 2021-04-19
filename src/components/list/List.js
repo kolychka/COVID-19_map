@@ -1,5 +1,6 @@
 import React from 'react';
 import { Scrollbar } from 'react-scrollbars-custom';
+
 import './list.css';
 import './scrollbar.css';
 
@@ -13,11 +14,10 @@ class List extends React.Component {
         super(props);
         this.section = {
             name: props.name,
+            title: props.title,
             color: props.color,
             summary: props.summary,
         };
-
-        this.listElement = "CountryListElement"; // будет заменено на функцию проверки входящих данных
     }
 
     addCountryList(name, countries) {
@@ -54,7 +54,7 @@ class List extends React.Component {
                         className={"default-block " + 
                             (this.section.name === "cases" ? "default-block_margin_b" : "")
                             + " default-block_padding"}>
-                        <h2 className="h2">Global Cases</h2>
+                        <h2 className="h2">Global {this.section.title}</h2>
                         <p className={"p number total-number total-number_padding " + this.section.color}>{
                             this.section?.summary?.total
                         }</p>
@@ -63,14 +63,13 @@ class List extends React.Component {
                         className={"default-block default-block_padding " + 
                             (this.section.name !== "cases" ? "default-block_border-top_none" : "")}>
                         <h3 className={"h3" + (this.section.name === "cases" ? "" : " display_none") }>Cases by Country</h3>
-                        <div className="list">{/* сюда вставлять скроллбар */}
+                        <div className="list">
                             <Scrollbar
                                 style={{ height: 200 }}
                                 ref={ref => (this.scrollbars = ref)}
                                 noScrollX 
                                 trackYProps={{ className: "track-y" }}
                                 thumbYProps={{ className: "thumb-y" }}
-                                // trackXProps={{ className: "track-x" }}
                                 wrapperProps={{ className: "wraper" }} >
                                 {/* { this.addCountryList() }
                                 { this.addTypeCountryList() }
@@ -85,8 +84,8 @@ class List extends React.Component {
                     </section>
                     <nav>
                         <ul className="list__tabs list__tabs_margin list__tabs_padding_l">
-                            <li className="default-block default-block_border-top_none list__tabs-elem list__tabs-elem_padding list__tabs-elem_margin_r"><a href="#a" className="a">Global Tests</a></li>
-                            <li className="default-block default-block_border-top_none list__tabs-elem list__tabs-elem_padding"><a href="#a" className="a">Region</a></li>
+                            <li className="default-block default-block_border-top_none list__tabs-elem list__tabs-elem_padding list__tabs-elem_margin_r"><a href="#a" className="a">Total</a></li>
+                            <li className="default-block default-block_border-top_none list__tabs-elem list__tabs-elem_padding"><a href="#a" className="a">New</a></li>
                         </ul>
                     </nav>
                 </div>
