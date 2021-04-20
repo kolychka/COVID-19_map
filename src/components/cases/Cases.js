@@ -23,11 +23,13 @@ class Cases extends React.Component {
             "countries": [],
         }
         this.api.summary.Countries.forEach(country => {
-            casesSummary.countries.push({ 
-                "id": country.ID, 
-                "country": country.Country,
-                "total": country.TotalConfirmed,
-            });
+            if (country.TotalConfirmed !== 0) {
+                casesSummary.countries.push({ 
+                    "id": country.ID, 
+                    "country": country.Country,
+                    "total": country.TotalConfirmed,
+                });
+            }
         });
         casesSummary.countries.sort(this.compareTotals);
         return casesSummary;

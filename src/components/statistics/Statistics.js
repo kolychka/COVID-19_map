@@ -23,11 +23,13 @@ class Statistics extends React.Component {
             "countries": [],
         }
         this.api.summary.Countries.forEach(country => {
-            deathsSummary.countries.push({ 
-                "id": country.ID, 
-                "country": country.Country,
-                "total": country.TotalDeaths,
-            });
+            if (country.TotalDeaths !== 0) {
+                deathsSummary.countries.push({ 
+                    "id": country.ID, 
+                    "country": country.Country,
+                    "total": country.TotalDeaths,
+                });
+            }
         });
         deathsSummary.countries.sort(this.compareTotals);
         return deathsSummary;
@@ -39,11 +41,13 @@ class Statistics extends React.Component {
             "countries": [],
         }
         this.api.summary.Countries.forEach(country => {
-            testsSummary.countries.push({ 
-                "id": country.ID, 
-                "country": country.Country,
-                "total": country.TotalRecovered,
-            });
+            if (country.TotalRecovered !== 0) {
+                testsSummary.countries.push({ 
+                    "id": country.ID, 
+                    "country": country.Country,
+                    "total": country.TotalRecovered,
+                });
+            }
         });
         testsSummary.countries.sort(this.compareTotals);
         return testsSummary;
