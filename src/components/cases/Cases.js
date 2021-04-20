@@ -13,38 +13,17 @@ class Cases extends React.Component {
         };
     }
 
-    compareTotals(a, b) {
-        return b.total - a.total;
-    }
-
-    getCasesSummary() {
-        let casesSummary = {
-            "total": this.api.summary.Global.TotalConfirmed,
-            "countries": [],
-        }
-        this.api.summary.Countries.forEach(country => {
-            if (country.TotalConfirmed !== 0) {
-                casesSummary.countries.push({ 
-                    "id": country.ID, 
-                    "country": country.Country,
-                    "total": country.TotalConfirmed,
-                });
-            }
-        });
-        casesSummary.countries.sort(this.compareTotals);
-        return casesSummary;
-    }
-
     render() {
         let time = this.api?.summary?.Global?.Date ? this.api.summary.Global.Date : '2021-04-15'; //this.api.summary.Global.Date;
         return (
             <div className="item item__cases">{
                 this.state.downloadStatus ? 
+                    /* TODO вот сюда (и далее, где это есть) добавить ещё один тернарный оператор, который будет переключать списки между собой */
                     <List 
                         name="cases" 
                         title="cases"
                         color="text_red" 
-                        summary={this.getCasesSummary()}
+                        summary={this.api.getCustomSummary('TotalConfirmed')}
                     ></List> : ""
                 }
                 <div className="default-block default-block_padding">

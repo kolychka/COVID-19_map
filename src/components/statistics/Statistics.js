@@ -13,46 +13,6 @@ class Statistics extends React.Component {
         };
     }
 
-    compareTotals(a, b) {
-        return b.total - a.total;
-    }
-
-    getDeathsSummary() {
-        let deathsSummary = {
-            "total": this.api.summary.Global.TotalDeaths,
-            "countries": [],
-        }
-        this.api.summary.Countries.forEach(country => {
-            if (country.TotalDeaths !== 0) {
-                deathsSummary.countries.push({ 
-                    "id": country.ID, 
-                    "country": country.Country,
-                    "total": country.TotalDeaths,
-                });
-            }
-        });
-        deathsSummary.countries.sort(this.compareTotals);
-        return deathsSummary;
-    }
-
-    getTestsSummary() {
-        let testsSummary = {
-            "total": this.api.summary.Global.TotalRecovered,
-            "countries": [],
-        }
-        this.api.summary.Countries.forEach(country => {
-            if (country.TotalRecovered !== 0) {
-                testsSummary.countries.push({ 
-                    "id": country.ID, 
-                    "country": country.Country,
-                    "total": country.TotalRecovered,
-                });
-            }
-        });
-        testsSummary.countries.sort(this.compareTotals);
-        return testsSummary;
-    }
-
     render() {
         return (
             <div className="item item__statistics">
@@ -63,7 +23,7 @@ class Statistics extends React.Component {
                                 name="statistics" 
                                 title="deaths"
                                 color="text_white" 
-                                summary={this.getDeathsSummary()}
+                                summary={this.api.getCustomSummary('TotalDeaths')}
                             ></List> : ""
                     }</div>
                     <div className="statistics-item statistics-item_margin_l statistics-item__tests">{
@@ -72,7 +32,7 @@ class Statistics extends React.Component {
                                 name="statistics" 
                                 title="tests"
                                 color="text_blue" 
-                                summary={this.getTestsSummary()}
+                                summary={this.api.getCustomSummary('TotalRecovered')}
                             ></List> : ""
                     }</div>
                     <div className="statistics-item statistics-item__graph default-block">

@@ -1,3 +1,5 @@
+import summary from './exampleData.json';
+
 class API {
     constructor(cbs) {
         // this.countries = null;
@@ -14,29 +16,39 @@ class API {
         return (await response.json());
     }
 
-    /*async summary() {
-        const result = await fetch('https://api.covid19api.com/summary', {
-            headers: {
-                'X-Access-Token': 'some token'
+    getCustomSummary(key) {
+        let result = {
+            "total": this.summary.Global[key],
+            "countries": [],
+        }
+        this.summary.Countries.forEach(country => {
+            if (country[key] !== 0) {
+                result.countries.push({ 
+                    "id": country.ID, 
+                    "country": country.Country,
+                    "total": country[key],
+                });
             }
         });
-        return (await result.json())
+        result.countries.sort((a, b) => b.total - a.total);
+        return result;
     }
-
-    default() {
-        return this.getData();
-    }
-
-    totalCountry(country) {
-        return this.getData(`total/country/${country}`);
-    }*/
 
     getDownloadCountries() {
         return this.countries;
     }
 
-    getSummary() {
-        return this.getData('summary?token=pk.eyJ1IjoiYXJhbWJvbCIsImEiOiJja2lzeTZseW8wODFpMnFtdXlqYjFyd2JnIn0.WMxH4WZLhJ-50-zSMgJL_Q');
+    async getSummary() {
+        try {
+            const response = await fetch(`https://api.covid19api.com/summary?token=pk.eyJ1IjoiYXJhbWJvbCIsImEiOiJja2lzeTZseW8wODFpMnFtdXlqYjFyd2JnIn0.WMxH4WZLhJ-50-zSMgJL_Q`);
+            const result = await response.json();
+            // TODO записать result в indexedDB, чтобы сохранилось
+            return result;
+        } catch (e) {
+            // TODO ЕСЛИ запрос сдох, то подтянуть данные из indexedDB
+            // TODO ЕСЛИ в inedexDB данных нет, то взять данные из exampleData.json
+            return summary;
+        }        
     }
 
     getCountries() {
