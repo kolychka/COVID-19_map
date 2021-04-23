@@ -9,17 +9,6 @@ import TypeCountryListElement from './listElements/TypeCountryListElement';
 import TypeRegionListElement from './listElements/TypeRegionListElement';
 
 class List extends React.Component {
-
-    /* TODO проверить скорость работы обоих методов и выбрать оптимальных. Неоптимальный закоментировать с соответствущим пояснением
-        console.log(str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
-        console.log(parseInt(str).toLocaleString('ru-RU'));
-
-        var numberFormat = new Intl.NumberFormat('ru-RU', options);
-        console.log(numberFormat.format(1234567890));
-        или так
-        var formatted = a.map(numberFormat.format); - вот так даже лучше будет
-     */
-
     constructor(props) {
         super(props);
         this.section = {

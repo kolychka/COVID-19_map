@@ -14,9 +14,19 @@ class API {
         return (await response.json());
     }
 
-    numberWithSpaces(num) { // 0.8615     0.8025     0.3515
+    numberWithSpaces(num) { 
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     } 
+    /* Создание пробелов между тройками чисел, начиная с конца строки
+    Регулярные выражения работают быстрее.
+    Неоптимальные методы:
+    1. num.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')); // при создании cases работает на 1-4 милисекунды дольше
+    2. parseInt(str).toLocaleString('ru-RU'); // при создании cases работает на 19-20 секунд дольше
+    3. var numberFormat = new Intl.NumberFormat('ru-RU', options); // каждое создание экземпляра классса затрачивает большое количество памяти, но со временем выравнивается, хотя затраты всё равно выше
+        console.log(numberFormat.format(1234567890));
+        или так
+        var formatted = a.map(numberFormat.format); // не был опробован
+    */
 
     getCustomSummary(key) {
         let result = {
@@ -24,7 +34,6 @@ class API {
             "totalWithSpaces": this.numberWithSpaces(this.summary.Global[key]),
             "countries": [],
         }
-        let t0 = performance.now();
         this.summary.Countries.forEach(country => {
             if (country[key] !== 0) {
                 result.countries.push({ 
@@ -35,8 +44,6 @@ class API {
                 });
             }
         });
-        let t1 = performance.now();
-        console.log("SPEED of numberWithSpaces111: ", (t1 - t0).toFixed(4));
         result.countries.sort((a, b) => b.total - a.total);
         return result;
     }
