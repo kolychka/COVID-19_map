@@ -36,7 +36,7 @@ class Map extends React.Component {
 
         return (
             <div className="visual-item visual-item__map visual-item_margin_b default-block map">
-                <MapContainer id="map" center={position} zoom={13} scrollWheelZoom={true}>
+                {/* <MapContainer id="map" center={position} zoom={13} scrollWheelZoom={true}>
                     <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -46,7 +46,7 @@ class Map extends React.Component {
                             return (this.addCircle(i, city, colors.red, 1000)); // оптимальный радиус ~1000 this.getRandomIntInclusive(0, 80000)
                         })
                     }</div>
-                </MapContainer>
+                </MapContainer> */}
             </div>
         );
     }

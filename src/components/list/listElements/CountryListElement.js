@@ -11,7 +11,7 @@ class CountryListElement extends React.Component {
     render() {
         return (
             <div className="list__item list__item_margin list__item_padding">
-                <span className={"list__content_margin number " + this.color}>{this.country.total}</span>
+                <span className={"list__content_margin number " + this.color}>{this.country.totalWithSpaces}</span>
                 <span>{this.country.country}</span>
             </div>
         );

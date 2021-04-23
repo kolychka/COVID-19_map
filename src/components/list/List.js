@@ -28,7 +28,7 @@ class List extends React.Component {
             color: props.color,
             summary: props.summary,
         };
-    }
+    } 
 
     addCountryList(name, countries) {
         return (
@@ -66,7 +66,7 @@ class List extends React.Component {
                             + " default-block_padding"}>
                         <h2 className="h2">Global {this.section.title}</h2>
                         <p className={"p number total-number total-number_padding " + this.section.color}>{
-                            this.section?.summary?.total
+                            this.section?.summary?.totalWithSpaces
                         }</p>
                     </section>
                     <section 
@@ -81,9 +81,6 @@ class List extends React.Component {
                                 trackYProps={{ className: "track-y" }}
                                 thumbYProps={{ className: "thumb-y" }}
                                 wrapperProps={{ className: "wraper" }} >
-                                {/* { this.addCountryList() }
-                                { this.addTypeCountryList() }
-                                { this.addTypeRegionList() } */}
                                 {
                                     this.section?.summary?.countries ? 
                                         this.addCountryList(this.section.name, this.section.summary.countries) : 

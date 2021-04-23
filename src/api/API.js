@@ -2,10 +2,8 @@ import summary from './exampleData.json';
 
 class API {
     constructor(cbs) {
-        // this.countries = null;
         this.summary = {};
         (async () => {
-            // this.countries = await this.getCountries();
             this.summary = await this.getSummary();
             cbs.cb();
         })();
@@ -16,20 +14,29 @@ class API {
         return (await response.json());
     }
 
+    numberWithSpaces(num) { // 0.8615     0.8025     0.3515
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    } 
+
     getCustomSummary(key) {
         let result = {
             "total": this.summary.Global[key],
+            "totalWithSpaces": this.numberWithSpaces(this.summary.Global[key]),
             "countries": [],
         }
+        let t0 = performance.now();
         this.summary.Countries.forEach(country => {
             if (country[key] !== 0) {
                 result.countries.push({ 
                     "id": country.ID, 
                     "country": country.Country,
                     "total": country[key],
+                    "totalWithSpaces": this.numberWithSpaces(country[key]), 
                 });
             }
         });
+        let t1 = performance.now();
+        console.log("SPEED of numberWithSpaces111: ", (t1 - t0).toFixed(4));
         result.countries.sort((a, b) => b.total - a.total);
         return result;
     }
